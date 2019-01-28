@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConstantService } from 'src/app/services/constant.service';
+import { RouterState, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,16 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public pictures: any;
+  public carousel: any;
+  public informations: any;
 
-  constructor() { }
+  constructor(
+    public router: Router,
+    private constantService: ConstantService
+  ) { }
 
   ngOnInit() {
     this.loadCarousel();
+    this.loadInformations();
   }
 
   private loadCarousel() {
-    this.pictures = [{
+    this.carousel = [{
       title: 'Special & Fresh Food',
       content: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
       class: 'img-bg-1'
@@ -34,4 +41,7 @@ export class HeaderComponent implements OnInit {
     }];
   }
 
+  private loadInformations() {
+    this.informations = this.constantService.getInformations();
+  }
 }

@@ -25,4 +25,14 @@ export class ConstantService {
       link: 'contact'
     }];
   }
+
+  public getInformations() {
+    return {
+      adress: '3 Rue Saint Marc, 75002 Paris',
+      openDays: 'Lundi - Samedi',
+      openHoraries: '12h00 - 14h30 / 18h30 - 22h00',
+      phone: '+33 (0)1 73 75 10 87',
+      email: 'contact.baoshelterparis@gmail.com'
+    };
+  }
 }

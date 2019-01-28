@@ -3,7 +3,7 @@
   <header>
     <div class="container">
       <div class="colorlib-navbar-brand">
-        <img class="logo" src="assets/images/logo.png" alt="logo bao shelter">
+        <img (click)="router.navigate(['/'])" class="logo" src="assets/images/logo.png" alt="logo bao shelter">
       </div>
       <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     </div>
@@ -13,7 +13,7 @@
   <aside id="colorlib-hero">
     <div class="flexslider">
       <ul class="slides">
-        <li *ngFor="let picture of pictures" [ngClass]="picture.class">
+        <li *ngFor="let picture of carousel" [ngClass]="picture.class">
           <div class="overlay"></div>
           <div class="container-fluid">
             <div class="row">
@@ -46,7 +46,7 @@
               <i class="icon-map4"></i>
             </span>
             <h2>Adresse</h2>
-            <p>3 Rue Saint Marc, 75002 Paris</p>
+            <p>{{ informations.adress }}</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 text-center">
@@ -55,8 +55,8 @@
               <i class="icon-clock4"></i>
             </span>
             <h2>Horaires</h2>
-            <p>Lundi - Samedi</p>
-            <span>12h00 - 14h30 / 18h30 - 22h00</span>
+            <p>{{ informations.openDays }}</p>
+            <span>{{ informations.openHoraries }}</span>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 text-center">
@@ -65,7 +65,7 @@
               <i class="icon-mobile2"></i>
             </span>
             <h2>Téléphone</h2>
-            <p>+33 (0)1 73 75 10 87</p>
+            <p>{{ informations.phone }}</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 text-center">
@@ -74,7 +74,7 @@
               <i class="icon-envelope"></i>
             </span>
             <h2>Email</h2>
-            <p><a href="#">contact.baoshelterparis@gmail.com</a></p>
+            <p><a href="#">{{ informations.email }}</a></p>
           </div>
         </div>
       </div>
