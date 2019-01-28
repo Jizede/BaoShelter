@@ -1,5 +1,85 @@
 <ng-container>
-  <app-navbar></app-navbar>
-  <app-carousel></app-carousel>
-  <app-information-bar></app-information-bar>
+  <!-- Navbar -->
+  <header>
+    <div class="container">
+      <div class="colorlib-navbar-brand">
+        <img class="logo" src="assets/images/logo.png" alt="logo bao shelter">
+      </div>
+      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    </div>
+  </header>
+
+  <!-- Carousel -->
+  <aside id="colorlib-hero">
+    <div class="flexslider">
+      <ul class="slides">
+        <li *ngFor="let picture of pictures" [ngClass]="picture.class">
+          <div class="overlay"></div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+                <div class="slider-text-inner text-center">
+                  <div class="desc">
+                    <span class="icon"><i class="flaticon-cutlery"></i></span>
+                    <h1>{{ picture.title }}</h1>
+                    <p>{{ picture.content }}</p>
+                    <p><a href="#" class="btn btn-primary btn-lg btn-learn">Book a table</a></p>
+                    <div class="desc2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <app-mouse-wheel></app-mouse-wheel>
+    </div>
+  </aside>
+
+  <!-- Information Bar -->
+  <div class="colorlib-intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 text-center">
+          <div class="intro animate-box">
+            <span class="icon">
+              <i class="icon-map4"></i>
+            </span>
+            <h2>Adresse</h2>
+            <p>3 Rue Saint Marc, 75002 Paris</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 text-center">
+          <div class="intro animate-box">
+            <span class="icon">
+              <i class="icon-clock4"></i>
+            </span>
+            <h2>Horaires</h2>
+            <p>Lundi - Samedi</p>
+            <span>12h00 - 14h30 / 18h30 - 22h00</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 text-center">
+          <div class="intro animate-box">
+            <span class="icon">
+              <i class="icon-mobile2"></i>
+            </span>
+            <h2>Téléphone</h2>
+            <p>+33 (0)1 73 75 10 87</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 text-center">
+          <div class="intro animate-box">
+            <span class="icon">
+              <i class="icon-envelope"></i>
+            </span>
+            <h2>Email</h2>
+            <p><a href="#">contact.baoshelterparis@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="goto-here"></div>
 </ng-container>

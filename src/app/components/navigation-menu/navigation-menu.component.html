@@ -5,11 +5,7 @@
       <div class="row">
         <div class="col-md-12 text-center">
           <ul>
-            <li class="active"><a href="index.html">Accueil</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="reservation.html">Réservation</a></li>
-            <li><a href="about.html">À propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="navigation-link" *ngFor="let link of navigationLinks"><a [routerLink]="link.link">{{ link.label }}</a></li>
           </ul>
         </div>
       </div>

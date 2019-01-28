@@ -3,42 +3,44 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
+/* MODULES */
+import { LayoutModule } from './containers/layout/layout.module';
+
 /* COMPONENTS */
 import { AppComponent } from './app.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { InformationBarComponent } from './components/information-bar/information-bar.component';
+import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { OrderMenuComponent } from './components/order-menu/order-menu.component';
 import { ReservationFormComponent } from './components/reservation-form/reservation-form.component';
 
+import { CustomerReviewComponent } from './components/customer-review/customer-review.component';
+
 /* CONTAINERS */
 import { HomeComponent } from './containers/home/home.component';
-import { HeaderComponent } from './containers/layout/header/header.component';
-import { FooterComponent } from './containers/layout/footer/footer.component';
-import { CustomerReviewComponent } from './customer-review/customer-review.component';
-
+import { MenuComponent } from './containers/menu/menu.component';
+import { ReservationComponent } from './containers/reservation/reservation.component';
+import { AboutUsComponent } from './containers/about-us/about-us.component';
+import { ContactComponent } from './containers/contact/contact.component';
 
 @NgModule({
   declarations: [
     /* COMPONENTS */
     AppComponent,
-    MenuComponent,
-    NavbarComponent,
-    CarouselComponent,
-    InformationBarComponent,
+    HomeComponent,
+    NavigationMenuComponent,
     OrderMenuComponent,
     ReservationFormComponent,
+    CustomerReviewComponent,
 
     /* CONTAINERS */
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    CustomerReviewComponent,
+    MenuComponent,
+    ReservationComponent,
+    AboutUsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -47,6 +47,14 @@
 
 	var burgerMenu = function() {
 
+		/* CUSTOM */
+		$('#colorlib-main-nav .navigation-link').on('click', function(event) {
+			if( $('body').hasClass('menu-show') ) {
+				$('body').removeClass('menu-show');
+				$('#colorlib-main-nav > .js-colorlib-nav-toggle').removeClass('show');
+			}
+		});
+
 		$('.js-colorlib-nav-toggle').on('click', function(event) {
 			event.preventDefault();
 			var $this = $(this);
